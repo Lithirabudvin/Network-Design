@@ -1,6 +1,6 @@
-# University Network Design: Backbone & Departmental Implementation
+# University & Department Network Design in Cisco Packet Tracer
 
-This project outlines the design and implementation of a robust and scalable network infrastructure for the University of Moratuwa (UOM) and, specifically, the Electronic and Telecommunication Engineering (ENTC) Department. Leveraging Cisco Packet Tracer, this solution focuses on high availability, efficient routing, and simplified device management.
+This project demonstrates the implementation of a robust and scalable network infrastructure for a university campus backbone and a specific department (ENTC), designed and simulated using Cisco Packet Tracer. The design emphasizes connectivity, routing efficiency, and automated IP address management.
 
 ---
 
@@ -8,117 +8,128 @@ This project outlines the design and implementation of a robust and scalable net
 
 - [Project Overview](#project-overview)
 - [Key Features](#key-features)
-- [Network Design Principles](#network-design-principles)
-- [Implementation Details](#implementation-details)
-- [Project Files & Structure](#project-files--structure)
 - [Network Topologies](#network-topologies)
-- [How to Open and Run](#how-to-open-and-run)
+- [Routing Protocol](#routing-protocol)
+- [IP Address Management](#ip-address-management)
+- [Project Files](#project-files)
+- [How to Use](#how-to-use)
+- [Visualizations](#visualizations)
+- [Future Enhancements](#future-enhancements)
 - [Acknowledgements](#acknowledgements)
 
 ---
 
 ## Project Overview
 
-This project simulates the network infrastructure of the University of Moratuwa, distinguishing between a university-wide backbone and a detailed departmental network for the ENTC faculty. The design prioritizes **redundancy**, **efficient routing**, and **ease of management** to ensure continuous and reliable connectivity for all users and services.
+This Cisco Packet Tracer project showcases the design and implementation of two interconnected networks:
 
-The entire implementation is carried out using **Cisco Packet Tracer**, providing a practical and verifiable simulation environment for the proposed network architecture.
+1.  **University Backbone Network (UOM):** A foundational network infrastructure for the entire university, ensuring high availability and connectivity across various faculties and departments.
+2.  **ENTC Department Network:** A specialized network designed to meet the specific requirements of the Electronics and Telecommunication Engineering (ENTC) department, integrated seamlessly with the university backbone.
 
-## Key Features
-
-- **Hybrid Network Topology**: Implemented a combination of **star and mesh topologies** to ensure high availability and prevent single points of failure, crucial for a critical network like a university backbone.
-- **OSPF Routing Protocol**: Utilized **Open Shortest Path First (OSPF)** for dynamic and efficient packet routing within and between network segments, enabling fast convergence and load balancing.
-- **DHCP for IP Address Management**: Configured **Dynamic Host Configuration Protocol (DHCP)** to automatically assign IP addresses to devices, simplifying network administration and reducing manual configuration errors.
-- **Scalable Design**: The architecture is designed to be scalable, allowing for future expansion and integration of additional departments or services without major re-designs.
+The design prioritizes network resilience, efficient packet delivery, and simplified device configuration.
 
 ---
 
-## Network Design Principles
+## Key Features
 
-The network design adheres to modern best practices, focusing on:
-
--   **High Availability**: Through redundant links and a mix of topologies, connectivity is maintained even in the event of component failures.
--   **Performance**: OSPF ensures optimal path selection and fast routing decisions, minimizing latency.
--   **Manageability**: DHCP simplifies IP management, while structured segmentation aids troubleshooting.
--   **Security**: While not the primary focus, the layered design provides a foundation for future security enhancements.
-
-## Implementation Details
-
-### University Backbone Network
-The university backbone serves as the core interconnecting various faculties, administrative blocks, and key services. Its design emphasizes high bandwidth and redundancy to handle aggregated traffic effectively.
-
-### ENTC Department Network
-The ENTC department network is designed to cater to the specific needs of students and staff, including labs, lecture halls, and offices. It integrates seamlessly with the university backbone while providing localized services and efficient internal communication.
-
-## Project Files & Structure
-```
-Network-Design-UOM/
-├── Backbone_of_the_University/
-│ └── backbone.pkt # Cisco Packet Tracer file for the UOM backbone network
-│
-├── Department_Network/
-│ └── ENTCdepartment.pkt # Cisco Packet Tracer file for the ENTC department network (assuming this name)
-│
-├── Images/
-│ ├── university_backbone_topology.png # Image of the University Backbone topology
-│ ├── entc_department_topology.png # Image of the ENTC Department network topology
-│ ├── ospf_configuration_example.png # Screenshot of OSPF configuration (optional)
-│ └── dhcp_configuration_example.png # Screenshot of DHCP configuration (optional)
-│
-└── README.md # This documentation file
-```
-**Note:** I've assumed the ENTC departmental file is named `entc_department.pkt`. Please adjust the name in the file structure and the guide below if it's different.
+-   **Simulated Environment:** Implemented entirely within Cisco Packet Tracer for easy sharing, simulation, and analysis.
+-   **Hybrid Network Topology:** Utilizes a strategic mix of **star and mesh topologies** to enhance fault tolerance and prevent single points of failure, ensuring high availability and robust connection paths.
+-   **Dynamic Routing with OSPF:** Employs the **Open Shortest Path First (OSPF)** routing protocol for efficient and dynamic packet routing within and between the networks, allowing for automatic route recalculation in case of link failures.
+-   **Automated IP Assignment (DHCP):** Configures **Dynamic Host Configuration Protocol (DHCP)** to automatically assign IP addresses to devices, simplifying network administration and device onboarding.
 
 ---
 
 ## Network Topologies
 
-### University Backbone Network Topology
+The network design strategically combines different topologies:
 
-This diagram illustrates the robust and redundant backbone network of the University of Moratuwa, designed to connect all major faculties and administrative units.
+*   **Backbone Network:** Features a **mesh-like topology** among core routers to provide redundancy and multiple paths, minimizing connection loss.
+*   **Department Network:** Utilizes a **star topology** for end-device connectivity to departmental switches, which then connect to the backbone. This provides centralized management and easy scalability within the department.
 
-![University Backbone Network Topology](./Images/university_backbone_topology.png)
-*Figure 1: High-level view of the University of Moratuwa's backbone network in Cisco Packet Tracer.*
-
-### ENTC Department Network Topology
-
-This diagram provides a detailed view of the Electronic and Telecommunication Engineering (ENTC) Department's network, showcasing its internal structure and connection points to the university backbone.
-
-![ENTC Department Network Topology](./Images/entc_department_topology.png)
-*Figure 2: Detailed topology of the ENTC Department's network, highlighting internal device connections.*
-
-### Configuration Examples (Optional - Add if you have screenshots)
-
-To further illustrate the implementation, here are examples of key configurations:
-
-#### OSPF Configuration Example
-![OSPF Configuration Snippet](./Images/ospf_configuration_example.png)
-*Figure 3: Snippet from a router's OSPF configuration in Cisco Packet Tracer.*
-
-#### DHCP Configuration Example
-![DHCP Configuration Snippet](./Images/dhcp_configuration_example.png)
-*Figure 4: Example of DHCP server configuration for automated IP assignment.*
+This hybrid approach ensures both high reliability for critical inter-network communication and manageability for local access.
 
 ---
 
-## How to Open and Run
+## Routing Protocol
 
-1.  **Install Cisco Packet Tracer**: Ensure you have Cisco Packet Tracer (version 7.x or later recommended) installed on your system. You can download it from the Cisco Networking Academy website.
-2.  **Clone or Download Repository**: Clone this GitHub repository to your local machine.
-3.  **Open .pkt Files**:
-    *   Navigate to the `Backbone_of_the_University` folder and open `backbone.pkt` with Cisco Packet Tracer.
-    *   Navigate to the `Department_Network` folder and open `entc_department.pkt` with Cisco Packet Tracer.
-4.  **Explore and Simulate**: Once opened, you can:
-    *   Inspect device configurations (CLI, GUI).
-    *   Run Pings and Traceroutes to verify connectivity and routing paths.
-    *   Switch to Simulation Mode to observe packet flow.
+**OSPF (Open Shortest Path First)** is the chosen interior gateway protocol for this project.
+
+*   **Dynamic Path Selection:** OSPF allows routers to dynamically discover the best paths for packet delivery, adapting to changes in the network topology (e.g., link failures or additions).
+*   **Load Balancing:** OSPF can facilitate load balancing over equal-cost paths, if configured.
+*   **Scalability:** Suitable for large networks like a university campus due to its hierarchical design capabilities (using areas).
+
+---
+
+## IP Address Management
+
+**DHCP (Dynamic Host Configuration Protocol)** is configured on central network devices (e.g., routers or servers) to:
+
+*   Automatically assign unique IP addresses, subnet masks, default gateways, and DNS server information to end devices (PCs, laptops, etc.).
+*   Reduce manual configuration errors and administrative overhead.
+*   Efficiently manage IP address pools within each network segment.
+
+---
+
+## Project Files
+
+```
+
+Network-Design-Project/
+├── Backbone_of_the_University/
+│ └── backbone.pkt # Cisco Packet Tracer file for the University Backbone Network
+│
+├── Department_Network/
+│ └── ENTC department.pkt # Cisco Packet Tracer file for the ENTC Department Network
+│
+├── Images/
+│ ├── Backbone.png # Screenshot/Diagram of the University Backbone Network topology
+│ └── Department.png # Screenshot/Diagram of the ENTC Department Network topology
+│
+└── README.md # This documentation file
+```
+
+---
+
+## How to Use
+
+To explore and interact with this network design:
+
+1.  **Download Cisco Packet Tracer:** Ensure you have Cisco Packet Tracer installed on your system. You can typically download it from the Cisco Networking Academy website after registering.
+2.  **Clone the Repository:** Clone this GitHub repository to your local machine.
+3.  **Open .pkt Files:** Navigate to the `Backbone_of_the_University/` and `Department_Network/` directories and open the `.pkt` files using Cisco Packet Tracer.
+4.  **Explore and Test:**
+    *   Observe the network topologies.
+    *   Examine device configurations (routers, switches, PCs).
+    *   Test connectivity using `ping` commands between various devices.
+    *   Verify OSPF routing tables on routers using `show ip route ospf` and `show ip protocols` commands.
+    *   Check DHCP server configurations and client IP assignments.
+
+---
+
+## Visualizations
+
+Here are visual representations of the implemented network topologies:
+
+### University Backbone Network
+![University Backbone Network Topology. This image shows the core mesh-like structure connecting various segments of the university campus.](./Images/Backbone.png)
+
+### ENTC Department Network
+![ENTC Department Network Topology. This image details the star topology within the department, connecting to the university backbone.](./Images/Department.png)
+
+---
+
+## Future Enhancements
+
+Potential areas for future development and enhancement include:
+
+*   **VLAN Implementation:** Segmenting the network further using VLANs for enhanced security and broadcast domain control.
+*   **Inter-VLAN Routing:** Configuring routing between VLANs on multilayer switches or routers.
+*   **Access Control Lists (ACLs):** Implementing security policies to filter traffic.
+*   **Wireless Network Integration:** Adding wireless access points and configuring WLANs.
+*   **Network Monitoring:** Integrating tools for real-time network performance monitoring.
 
 ---
 
 ## Acknowledgements
 
-This project was developed as part of a network design course/module at the University of Moratuwa.
-
----
-
-*Designed and Implemented by [Your Name/Team Name]*
-
+This project was developed as an academic exercise in network design and implementation.
